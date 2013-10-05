@@ -58,7 +58,7 @@ class lmph
 		short cft;
 	public:
 		bool active;
-		lph(int lt,int dt, int )
+		lmph(int lt,int dt, int )
 		{
 			active = true;
 			lifetime_sec = (3600*24)*14;
@@ -73,7 +73,10 @@ class lmph
 			curr_life_time++;
 			cft--;
 			divtime_sec--;
-			if(divtime_sec<=0){k+=4;}
+			if(divtime_sec<=0)
+{
+k+=4;
+}
 			if(cft==0)
 			{
 				k++;
@@ -92,13 +95,12 @@ class vir
 {
 	private:
 		int lifetime_sec;
-		int divtime_sec;
 		int curr_life_time;
 		int time_to_find;
 		short cft;
 	public:
 		bool active;
-		lph(int lt,int dt, int )
+		vir(int lt,int dt, int )
 		{
 			active = true;
 			lifetime_sec = (3600*24)*14;

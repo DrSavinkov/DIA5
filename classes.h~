@@ -72,6 +72,8 @@ class lmph
 			short k=0; 
 			curr_life_time++;
 			cft--;
+			divtime_sec--;
+			if(divtime_sec<=0){k+=4;}
 			if(cft==0)
 			{
 				k++;
@@ -85,4 +87,43 @@ class lmph
 			return k;
 		}
 };
+
+class vir
+{
+	private:
+		int lifetime_sec;
+		int divtime_sec;
+		int curr_life_time;
+		int time_to_find;
+		short cft;
+	public:
+		bool active;
+		lph(int lt,int dt, int )
+		{
+			active = true;
+			lifetime_sec = (3600*24)*14;
+			divtime_sec = 3600*4; // 4 hour
+			curr_life_time = random()*lifetime_sec;
+			time_to_find = 40;
+			cft = random()*time_to_find;
+		}
+		short addt()
+		{
+			short k=0; 
+			curr_life_time++;
+			cft--;
+			if(cft==0)
+			{
+				k++;
+				cft=time_to_find;
+			}
+			if(curr_life_time==lifetime_sec)
+			{
+				active=false;
+				k+=2;
+			}
+			return k;
+		}
+};
+
 
