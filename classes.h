@@ -5,7 +5,7 @@ long double dt=1; // sec
 
 class T_cell
 {
-	private:
+	public:
 		int lifetime_sec;
 		int divtime_sec;
 		int curr_life_time;
@@ -50,15 +50,21 @@ class T_cell
 
 class iT_cell
 {
-	private:
+	public:
 		int lifetime_sec;
 		int divtime_sec;
 		int curr_life_time;
 		int left_to_div;
 	public:
 		bool active;
+		int type;
+		double chmut;
+		int step_out_vir;
+		int hmovir;
 		iT_cell()
 		{
+			step_out_vir = 60;
+			hmovir = 1;
 			active = true;
 			lifetime_sec = (3600*24)*30;
 			divtime_sec = 60*30;
@@ -96,7 +102,7 @@ class iT_cell
 
 class lmph
 {
-	private:
+	public:
 		int lifetime_sec;
 		int divtime_sec;
 		int curr_life_time;
@@ -169,11 +175,22 @@ class vir
 			time_to_find = 40;
 			cft = random()*time_to_find;
 		}
-		void asnew()
+		vir(int x)
+		{
+			type=x;
+			chinf = 1;
+			active = true;
+			lifetime_sec = (3600*24)*1.5;
+			curr_life_time = random()*lifetime_sec;
+			time_to_find = 40;
+			cft = random()*time_to_find;
+		}
+		void asnew(int x)
 		{
 			active = true;
 			curr_life_time = 0;
 			cft = 0;
+			type=x;
 		}
 		short addt()
 		{
