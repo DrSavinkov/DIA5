@@ -10,7 +10,7 @@ using namespace std;
 
 vector
 
-int main(int argc, char** argv)
+int _tmain(int argc, _TCHAR* argv[])
 {
 	cout << "In 1 Gb can be ~" << (1024*1024*1024)/sizeof(T_cell) << endl;
 	int c;
