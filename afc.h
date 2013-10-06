@@ -1,4 +1,7 @@
 #include <stdlib.h>
 #include <random>
 
-long double random(){return (long double(rand()))/(long double(RAND_MAX));}
+long double rnd()
+{
+	return ((long double)(rand()))/((long double)(RAND_MAX));
+}

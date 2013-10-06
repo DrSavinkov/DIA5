@@ -1,14 +1,17 @@
-// DIA5.cpp: определяет точку входа для консольного приложения.
+// DIA5.cpp
 //
 
-//#include "stdafx.h"
 #include <stdlib.h>
 #include "classes.h"
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
-vector
+vector<T_cell> cell;
+vector<iT_cell> icell;
+vector<lmph> lymp;
+vector<vir> vir;
 
 int main(int argc, char** argv)
 {
